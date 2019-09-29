@@ -1,0 +1,31 @@
+{
+  "name": "linkquest-screenshot",
+  "version": "0.1.0",
+  "description": "Takes a screenshot of the page or pages being processed with Linkquest",
+  "main": "build/index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:watch": "tsc --watch",
+    "test": "ava"
+  },
+  "keywords": [
+    "linkquest",
+    "plugin",
+    "screenshot",
+    "mobile",
+    "desktop",
+    "screen"
+  ],
+  "author": "Robert Corponoi",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/fs-extra": "^8.0.0",
+    "ava": "^2.4.0",
+    "linkquest": "^0.2.1",
+    "puppeteer": "^1.20.0",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "fs-extra": "^8.1.0"
+  }
+}
