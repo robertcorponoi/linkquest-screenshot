@@ -1,6 +1,6 @@
 {
   "name": "linkquest-screenshot",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Takes a screenshot of the page or pages being processed with Linkquest",
   "main": "build/index.js",
   "scripts": {
@@ -19,11 +19,11 @@
   "author": "Robert Corponoi",
   "license": "MIT",
   "devDependencies": {
-    "@types/fs-extra": "^8.0.0",
+    "@types/fs-extra": "^8.0.1",
     "ava": "^2.4.0",
-    "linkquest": "^0.2.1",
-    "puppeteer": "^1.20.0",
-    "typescript": "^3.6.3"
+    "linkquest": "^0.2.2",
+    "puppeteer": "^2.0.0",
+    "typescript": "^3.7.2"
   },
   "dependencies": {
     "fs-extra": "^8.1.0"
