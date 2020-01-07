@@ -8,28 +8,21 @@ linkquest-screenshot is a plugin for [Linkquest](https://github.com:robertcorpon
 
 <div align="center">
 
-[![NPM version](https://img.shields.io/npm/v/linkquest-screenshot.svg?style=flat)](https://www.npmjs.com/package/linkquest-screenshot)
-[![Known Vulnerabilities](https://snyk.io/test/github/robertcorponoi/linkquest-screenshot/badge.svg)](https://snyk.io/test/github/robertcorponoi/linkquest-screenshot)
-[![NPM downloads](https://img.shields.io/npm/dm/linkquest-screenshot.svg?style=flat)](https://www.npmjs.com/package/linkquest-screenshot)
-<a href="https://badge.fury.io/js/linkquest-screenshot"><img src="https://img.shields.io/github/issues/robertcorponoi/linkquest-screenshot.svg" alt="issues" height="18"></a>
-<a href="https://badge.fury.io/js/linkquest-screenshot"><img src="https://img.shields.io/github/license/robertcorponoi/linkquest-screenshot.svg" alt="license" height="18"></a>
-[![Gitter](https://badges.gitter.im/gitterHQ/gitter.svg)](https://gitter.im/robertcorponoi)
+  [![NPM version](https://img.shields.io/npm/v/linkquest-screenshot.svg?style=flat)](https://www.npmjs.com/package/linkquest-screenshot)
+  [![Known Vulnerabilities](https://snyk.io/test/github/robertcorponoi/linkquest-screenshot/badge.svg)](https://snyk.io/test/github/robertcorponoi/linkquest-screenshot)
+  ![npm](https://img.shields.io/npm/dt/linkquest-screenshot)
+  [![NPM downloads](https://img.shields.io/npm/dm/linkquest-screenshot.svg?style=flat)](https://www.npmjs.com/package/linkquest-screenshot)
+  <a href="https://badge.fury.io/js/linkquest-screenshot"><img src="https://img.shields.io/github/issues/robertcorponoi/linkquest-screenshot.svg" alt="issues" height="18"></a>
+  <a href="https://badge.fury.io/js/linkquest-screenshot"><img src="https://img.shields.io/github/license/robertcorponoi/linkquest-screenshot.svg" alt="license" height="18"></a>
+  [![Gitter](https://badges.gitter.im/gitterHQ/gitter.svg)](https://gitter.im/robertcorponoi)
 
 </div>
-
-## **Table of contents**
-
-- [Install](#install)
-- [Usage](#usage)
-- [Options](#options)
-- [Tests](#tests)
-- [License](#license)
 
 ## **Install**
 
 To install linkquest-screenshot you can use:
 
-```shell
+```bash
 $ npm install linkquest-screenshot
 ```
 
@@ -40,14 +33,14 @@ To use linkquest-screenshot you must register it with linkquest like so:
 ```js
 const linkquest = new Linkquest('http://example.com/', { silent: true });
 
-linkquest.register(require('../build/index'), {
+linkquest.register(require('linkquest-screenshot'), {
   // Defines the directory where the screenshots will be output to.
   output: screenshotsDir,
   // Defines a collection of sizes to screenshot.
   sizes: {
-    // An overarching level.
+    // Describes the device type the screenshots are intended for.
     mobile: {
-      // Individual levels within the overarching level.
+      // Describes the device and the width x height of the device screen in pixels.
       pixel: [411, 731],
       iphone: [375, 812]
     },
@@ -72,13 +65,13 @@ This will crawl the page and save the output to the current working directory. I
 
 The options that can be passed to linkquest-screenshot are as follows:
 
-| param                      	| type   	| description                                                 	| default        	|
-|----------------------------	|--------	|-------------------------------------------------------------	|----------------	|
-| options                    	| Object 	|                                                             	|                	|
-| options.output             	| string 	| Where should the outputted screenshots be saved to.         	| proccess.cwd() 	|
-| options.sizes              	| Object 	| The sizes for the screenshots to generate.                  	| {}             	|
-| options.sizes.category     	| Object 	| An Object of categories which will be turned into a folder. 	| {}             	|
-| options.sizes.category.sub 	| Object 	| Sub categories to add to the main category.                 	| {}             	|
+| param                      	      | type   	| description                                                 	                                | default        	|
+|---------------------------------	|--------	|---------------------------------------------------------------------------------------------	|----------------	|
+| options                    	      | Object 	|                                                             	                                |                	|
+| options.output             	      | string 	| Where should the outputted screenshots be saved to.         	                                | proccess.cwd() 	|
+| options.sizes              	      | Object 	| The sizes for the screenshots to generate.                  	                                | {}             	|
+| options.sizes.deviceType     	    | Object 	| Describes the device type the screenshots are intended for. 	                                | {}             	|
+| options.sizes.deviceType.device 	| Object 	| Describes the device and the width x height of the device screen in pixels.                 	| {}             	|
 
 **Example:**
 

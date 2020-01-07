@@ -1,3 +1,8 @@
+1.0.1 / 2019-01-07
+==================
+* [MISC] Updated README with new information.
+* [MISC] Added more badges to README.
+
 1.0.0 / 2019-01-07
 ==================
 * [FEATURE] Converted the options object into a class.

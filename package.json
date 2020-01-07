@@ -1,6 +1,6 @@
 {
   "name": "linkquest-screenshot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Takes a screenshot of the page or pages being processed with Linkquest",
   "main": "build/index.js",
   "scripts": {
