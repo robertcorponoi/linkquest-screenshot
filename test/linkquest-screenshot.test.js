@@ -8,7 +8,6 @@ const Linkquest = require('linkquest');
 const screenshotsDir = path.resolve(__dirname, 'screenshots');
 
 test('Taking verious desktop, tablet, and mobile screenshots', async t => {
-
   const linkquest = new Linkquest('http://example.com/', { silent: true });
 
   linkquest.register(require('../build/index'), {
@@ -45,5 +44,4 @@ test('Taking verious desktop, tablet, and mobile screenshots', async t => {
   await fs.remove(screenshotsDir);
 
   t.deepEqual(screenshots, expected);
-
 });

@@ -13,22 +13,22 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs_extra_1 = __importDefault(require("fs-extra"));
+const Options_1 = __importDefault(require("./options/Options"));
 /**
  * Plugin for Linkquest that takes a screenshot of the current page with the options provided.
  *
  * @param {Object} [options]
  * @param {string} [options.output=process.cwd()] Where should the outputted screenshots be saved to.
  * @param {Object} options.sizes The sizes for the screenshots to generate.
- * @param {Object} options.sizes.category An Object of categories which will be turned into a folder.
- * @param {Object} options.sizes.category.sub Sub categories to add to the main category.
  */
 module.exports = (options) => __awaiter(void 0, void 0, void 0, function* () {
-    const url = new URL(options.page.url());
-    yield fs_extra_1.default.ensureDir(options.output);
-    for (const deviceType in options.sizes) {
-        const deviceTypeDir = `${options.output}/${deviceType}`;
+    const opts = new Options_1.default(options);
+    const url = new URL(opts.page.url());
+    yield fs_extra_1.default.ensureDir(opts.output);
+    for (const deviceType in opts.sizes) {
+        const deviceTypeDir = `${opts.output}/${deviceType}`;
         yield fs_extra_1.default.ensureDir(deviceTypeDir);
-        const viewports = options.sizes[deviceType];
+        const viewports = opts.sizes[deviceType];
         for (const device in viewports) {
             const deviceDir = `${deviceTypeDir}/${device}`;
             yield fs_extra_1.default.ensureDir(deviceDir);
@@ -36,7 +36,7 @@ module.exports = (options) => __awaiter(void 0, void 0, void 0, function* () {
             let fullPage = sizes.length === 1;
             if (fullPage)
                 sizes[1] = 1;
-            yield options.page.setViewport({ width: sizes[0], height: sizes[1] });
+            yield opts.page.setViewport({ width: sizes[0], height: sizes[1] });
             const dots = url.hostname.split('.').length;
             let imgName;
             if (dots > 2)
@@ -44,7 +44,7 @@ module.exports = (options) => __awaiter(void 0, void 0, void 0, function* () {
             else
                 imgName = url.hostname.substring(0, url.hostname.lastIndexOf("."));
             const imgPath = `${deviceDir}/${imgName}.png`;
-            yield options.page.screenshot({ path: imgPath, type: 'png', fullPage: fullPage });
+            yield opts.page.screenshot({ path: imgPath, type: 'png', fullPage: fullPage });
         }
     }
 });

@@ -1,6 +1,6 @@
 {
   "name": "linkquest-screenshot",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Takes a screenshot of the page or pages being processed with Linkquest",
   "main": "build/index.js",
   "scripts": {
@@ -21,9 +21,9 @@
   "devDependencies": {
     "@types/fs-extra": "^8.0.1",
     "ava": "^2.4.0",
-    "linkquest": "^0.2.2",
+    "linkquest": "^1.0.1",
     "puppeteer": "^2.0.0",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.4"
   },
   "dependencies": {
     "fs-extra": "^8.1.0"
